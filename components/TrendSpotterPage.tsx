@@ -73,7 +73,7 @@ const TrendSpotterPage: React.FC<TrendSpotterPageProps> = ({ onBack, onPushToStr
     }, 600);
 
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+      const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
       const response = await ai.models.generateContent({
         model: "gemini-3-pro-preview",
         contents: `Research the ${niche} market in ${location} for the month of ${seasonal.monthName}. 

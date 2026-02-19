@@ -74,7 +74,7 @@ const StrategistPage: React.FC<StrategistPageProps> = ({ onBack, initialContext,
     }, 700);
 
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+      const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
       const response = await ai.models.generateContent({
         model: "gemini-3-pro-preview",
         contents: `Architect a growth strategy for a ${niche} business located in ${location}. 

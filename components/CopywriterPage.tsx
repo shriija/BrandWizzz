@@ -84,7 +84,7 @@ const CopywriterPage: React.FC<CopywriterPageProps> = ({ onBack, initialContext,
     }, 600);
 
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+      const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
       const strategyStr = initialContext?.strategy 
         ? JSON.stringify(initialContext.strategy) 
         : "Generic growth plan";

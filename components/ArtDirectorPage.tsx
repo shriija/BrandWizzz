@@ -64,7 +64,7 @@ const ArtDirectorPage: React.FC<ArtDirectorPageProps> = ({ onBack, initialContex
     }, 800);
 
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+      const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
       
       // Step 1: Generate Visual Brief text using Pro for high reasoning
       const textResponse = await ai.models.generateContent({
